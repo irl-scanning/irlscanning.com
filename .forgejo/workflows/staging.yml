@@ -1,0 +1,37 @@
+name: Deploy staging
+
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+
+concurrency:
+  group: staging-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Deploy static assets to Garage
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: garage
+          AWS_ENDPOINT_URL: http://s3.intranet.irlscanning.com
+        run: |
+          set -euo pipefail
+          printf '100.64.0.7 s3.intranet.irlscanning.com\n' >> /etc/hosts
+          aws s3 mb s3://staging 2>/dev/null || true
+          aws s3api put-bucket-website --bucket staging --website-configuration \
+            '{"IndexDocument":{"Suffix":"index.html"}}'
+          aws s3 sync public/ s3://staging/ --delete
+
+      - name: Verify staging
+        run: |
+          curl --fail --silent --show-error --max-time 15 \
+            https://site.intranet.irlscanning.com/staging/ >/dev/null

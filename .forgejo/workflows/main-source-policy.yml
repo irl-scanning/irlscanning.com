@@ -1,0 +1,20 @@
+name: Main source policy
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  require-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require staging from this repository
+        env:
+          HEAD_REF: ${{ forgejo.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ forgejo.event.pull_request.head.repo.id }}
+          BASE_REPO: ${{ forgejo.event.pull_request.base.repo.id }}
+        run: |
+          set -euo pipefail
+          test "$HEAD_REF" = staging
+          test "$HEAD_REPO" = "$BASE_REPO"

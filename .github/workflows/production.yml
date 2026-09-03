@@ -1,0 +1,46 @@
+name: Deploy production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy static assets to Backblaze B2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.B2_REGION }}
+          B2_BUCKET: ${{ vars.B2_BUCKET }}
+          B2_ENDPOINT: ${{ vars.B2_ENDPOINT }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ vars.CLOUDFLARE_ZONE_ID }}
+        run: |
+          set -euo pipefail
+          required=(AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_DEFAULT_REGION B2_BUCKET B2_ENDPOINT CLOUDFLARE_API_TOKEN CLOUDFLARE_ZONE_ID)
+          for name in "${required[@]}"; do
+            if [ -z "${!name:-}" ]; then
+              echo "::notice::Production deployment is disabled until $name is configured."
+              exit 0
+            fi
+          done
+
+          aws s3 sync public/ "s3://$B2_BUCKET/" --delete --endpoint-url "$B2_ENDPOINT"
+          curl --fail --silent --show-error --request POST \
+            "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+            --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            --header 'Content-Type: application/json' \
+            --data '{"purge_everything":true}' >/dev/null
