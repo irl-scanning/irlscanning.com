@@ -36,10 +36,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: garage
-          AWS_ENDPOINT_URL: http://s3.intranet.irlscanning.com
+          AWS_ENDPOINT_URL: http://garage:3900
         run: |
           set -euo pipefail
-          printf '100.64.0.7 s3.intranet.irlscanning.com site.intranet.irlscanning.com\n' >> /etc/hosts
           aws s3 mb s3://staging 2>/dev/null || true
           aws s3api put-bucket-website --bucket staging --website-configuration \
             '{"IndexDocument":{"Suffix":"index.html"}}'
@@ -48,4 +47,5 @@ jobs:
       - name: Verify staging
         run: |
           curl --fail --silent --show-error --max-time 15 \
-            https://site.intranet.irlscanning.com/staging/ >/dev/null
+            --header 'Host: staging.site.intranet.irlscanning.com' \
+            http://garage:3902/ >/dev/null
