@@ -70,19 +70,18 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: garage
-          AWS_ENDPOINT_URL: http://s3.intranet.irlscanning.com
+          AWS_ENDPOINT_URL: http://garage:3900
           BUCKET: ${{ steps.preview.outputs.label }}
         run: |
           set -euo pipefail
-          printf '100.64.0.7 s3.intranet.irlscanning.com site.intranet.irlscanning.com\n' >> /etc/hosts
           aws s3 mb "s3://$BUCKET" 2>/dev/null || true
           aws s3api put-bucket-website --bucket "$BUCKET" --website-configuration \
             '{"IndexDocument":{"Suffix":"index.html"}}'
-           aws s3api put-bucket-lifecycle-configuration --bucket "$BUCKET" \
-             --lifecycle-configuration \
-             '{"Rules":[{"ID":"expire-preview","Status":"Enabled","Filter":{"Prefix":""},"Expiration":{"Days":14}}]}'
-           aws s3 rm "s3://$BUCKET/" --recursive || true
-           aws s3 cp public/ "s3://$BUCKET/" --recursive
+          aws s3api put-bucket-lifecycle-configuration --bucket "$BUCKET" \
+            --lifecycle-configuration \
+            '{"Rules":[{"ID":"expire-preview","Status":"Enabled","Filter":{"Prefix":""},"Expiration":{"Days":14}}]}'
+          aws s3 rm "s3://$BUCKET/" --recursive || true
+          aws s3 cp public/ "s3://$BUCKET/" --recursive
 
       - name: Report preview URL
         env:
@@ -92,7 +91,7 @@ jobs:
           LABEL: ${{ steps.preview.outputs.label }}
           PR_NUMBER: ${{ forgejo.event.issue.number }}
         run: |
-           jq -n --arg body "Preview deployed for 14 days: https://site.intranet.irlscanning.com/$LABEL/" \
+          jq -n --arg body "Preview deployed for 14 days: https://site.intranet.irlscanning.com/$LABEL/" \
             '{body:$body}' |
             curl --fail --silent --show-error --request POST \
               --header "Authorization: token $FORGEJO_TOKEN" \
