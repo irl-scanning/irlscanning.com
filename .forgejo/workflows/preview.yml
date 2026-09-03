@@ -20,17 +20,14 @@ jobs:
           FORGEJO_REPOSITORY: ${{ forgejo.repository }}
           FORGEJO_TOKEN: ${{ forgejo.token }}
           PR_NUMBER: ${{ forgejo.event.issue.number }}
-          REQUESTOR: ${{ forgejo.actor }}
+          CAN_PUSH: ${{ forgejo.event.repository.permissions.push }}
+          CAN_ADMIN: ${{ forgejo.event.repository.permissions.admin }}
         run: |
           set -euo pipefail
-          permission=$(curl --fail --silent --show-error \
-            --header "Authorization: token $FORGEJO_TOKEN" \
-            "$FORGEJO_API_URL/repos/$FORGEJO_REPOSITORY/collaborators/$REQUESTOR/permission" |
-            jq -r .permission)
-          case "$permission" in admin|write) ;; *) exit 1 ;; esac
+          case "$CAN_PUSH:$CAN_ADMIN" in true:* | *:true) ;; *) exit 1 ;; esac
 
           pr=$(curl --fail --silent --show-error \
-            --header "Authorization: token $FORGEJO_TOKEN" \
+            --header "Authorization: Bearer $FORGEJO_TOKEN" \
             "$FORGEJO_API_URL/repos/$FORGEJO_REPOSITORY/pulls/$PR_NUMBER")
           test "$(jq -r .state <<<"$pr")" = open
           test "$(jq -r .head.repo.id <<<"$pr")" = "$(jq -r .base.repo.id <<<"$pr")"
@@ -105,6 +102,6 @@ jobs:
           jq -n --arg body "Preview deployed for 14 days: https://site.intranet.irlscanning.com/$LABEL/" \
             '{body:$body}' |
             curl --fail --silent --show-error --request POST \
-              --header "Authorization: token $FORGEJO_TOKEN" \
+              --header "Authorization: Bearer $FORGEJO_TOKEN" \
               --header 'Content-Type: application/json' --data-binary @- \
               "$FORGEJO_API_URL/repos/$FORGEJO_REPOSITORY/issues/$PR_NUMBER/comments" >/dev/null
