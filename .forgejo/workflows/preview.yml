@@ -51,6 +51,11 @@ jobs:
           ref: ${{ steps.preview.outputs.sha }}
           persist-credentials: false
 
+      - name: Install AWS CLI
+        run: |
+          apt-get update
+          apt-get install --yes awscli
+
       - name: Deploy static assets to Garage
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
@@ -60,7 +65,7 @@ jobs:
           BUCKET: ${{ steps.preview.outputs.label }}
         run: |
           set -euo pipefail
-          printf '100.64.0.7 s3.intranet.irlscanning.com\n' >> /etc/hosts
+          printf '100.64.0.7 s3.intranet.irlscanning.com site.intranet.irlscanning.com\n' >> /etc/hosts
           aws s3 mb "s3://$BUCKET" 2>/dev/null || true
           aws s3api put-bucket-website --bucket "$BUCKET" --website-configuration \
             '{"IndexDocument":{"Suffix":"index.html"}}'
