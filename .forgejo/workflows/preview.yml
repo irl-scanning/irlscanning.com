@@ -71,10 +71,21 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: garage
           AWS_ENDPOINT_URL: http://garage:3900
+          GARAGE_ADMIN_TOKEN: ${{ secrets.GARAGE_ADMIN_TOKEN }}
           BUCKET: ${{ steps.preview.outputs.label }}
         run: |
           set -euo pipefail
-          aws s3 mb "s3://$BUCKET" 2>/dev/null || true
+          if ! curl --fail --silent --show-error \
+            --header "Authorization: Bearer $GARAGE_ADMIN_TOKEN" \
+            --get --data-urlencode "globalAlias=$BUCKET" \
+            http://garage:3903/v2/GetBucketInfo >/dev/null 2>&1; then
+            jq -n --arg bucket "$BUCKET" --arg key "$AWS_ACCESS_KEY_ID" \
+              '{globalAlias:$bucket,localAlias:{accessKeyId:$key,alias:$bucket,allow:{read:true,write:true,owner:true}}}' |
+              curl --fail --silent --show-error --request POST \
+                --header "Authorization: Bearer $GARAGE_ADMIN_TOKEN" \
+                --header 'Content-Type: application/json' --data-binary @- \
+                http://garage:3903/v2/CreateBucket >/dev/null
+          fi
           aws s3api put-bucket-website --bucket "$BUCKET" --website-configuration \
             '{"IndexDocument":{"Suffix":"index.html"}}'
           aws s3api put-bucket-lifecycle-configuration --bucket "$BUCKET" \
