@@ -60,3 +60,25 @@ Serve `public/` with any static HTTP server, for example:
 ```bash
 python -m http.server --directory public 8080
 ```
+
+## Penpot MCP
+
+This repository configures OpenCode to use Penpot's hosted MCP server. The MCP
+key is read from `~/.config/opencode/secrets/penpot-mcp-token` instead of being
+committed in `opencode.json`.
+
+Create the user-level secret file before starting OpenCode:
+
+```sh
+install -d -m 700 "$HOME/.config/opencode/secrets"
+umask 077
+"${EDITOR:-vi}" "$HOME/.config/opencode/secrets/penpot-mcp-token"
+chmod 600 "$HOME/.config/opencode/secrets/penpot-mcp-token"
+```
+
+The file must contain only the MCP key from **Your account -> Integrations ->
+MCP Server** in Penpot. It must not contain the complete server URL.
+
+Open a Penpot design and select **File -> MCP Server -> Connect**. Keep its
+Penpot tab open while using the MCP. After regenerating the MCP key in Penpot,
+replace the contents of the user-level secret file and restart OpenCode.
