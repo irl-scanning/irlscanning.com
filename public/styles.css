@@ -35,7 +35,7 @@
   --type-heading-line: 1;
   --type-body-line: 1.5;
   --brand-logo-width: 190px;
-  --brand-logo-layout-offset: -15px;
+  --footer-logo-layout-offset: -14.96px -22.44px -22.44px;
   --shadow: 0 24px 70px rgba(26, 11, 0, 0.12);
   --radius: 28px;
   --shell: min(1180px, calc(100% - 48px));
@@ -135,7 +135,8 @@ svg {
 }
 
 .footer-brand {
-  margin: var(--brand-logo-layout-offset);
+  justify-self: start;
+  margin: var(--footer-logo-layout-offset);
 }
 
 .desktop-nav {
@@ -1264,7 +1265,7 @@ svg {
 .footer-main nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px 30px;
+  gap: 6px 30px;
 }
 
 .footer-main nav a {
@@ -1487,7 +1488,7 @@ svg {
     --shell: calc(100% - 28px);
     --radius: 22px;
     --brand-logo-width: 155px;
-    --brand-logo-layout-offset: -12.24px;
+    --footer-logo-layout-offset: -12.21px -18.32px -18.32px;
   }
 
   .section {
