@@ -1255,6 +1255,11 @@ svg {
   padding-bottom: 70px;
 }
 
+.footer-main > p,
+.footer-main nav {
+  align-self: center;
+}
+
 .footer-main > p {
   max-width: 390px;
   margin: 0;
