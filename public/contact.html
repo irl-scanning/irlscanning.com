@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tell IRL Scanning about your venue, property, museum, or 3D scanning project.">
+    <meta name="theme-color" content="#1a0b00">
+    <title>Contact IRL Scanning | Plan a 3D scanning project</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="preload" href="fonts/nimbus-sans-l-bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="contact.js" defer></script>
+  </head>
+  <body class="contact-page">
+    <a class="skip-link" href="#main-content">Skip to contact form</a>
+
+    <svg class="icon-library" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="brand-logo.svg" width="1781" height="703" alt="IRL Scanning and Modelling">
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#industries">Industries</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#faq">FAQ</a>
+          <a class="nav-cta" href="#project-form" aria-current="page">Contact</a>
+        </nav>
+
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#industries">Industries</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="#project-form" aria-current="page">Contact</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main class="contact-page-main" id="main-content">
+      <section class="contact-page-hero" aria-labelledby="contact-title">
+        <div class="shell contact-page-grid">
+          <div class="contact-page-intro">
+            <p class="eyebrow eyebrow-light"><span></span> Start with the space</p>
+            <h1 id="contact-title">Tell us what you need to capture.</h1>
+            <p>Share the place, project goals, and timing. We will use those details to recommend the right capture approach and practical deliverables.</p>
+            <a class="contact-direct" href="mailto:hello@irlscanning.com">Or email hello@irlscanning.com directly</a>
+          </div>
+
+          <form class="contact-form" id="project-form" action="mailto:hello@irlscanning.com" method="post" enctype="text/plain" data-mailto-form>
+            <div class="contact-form-header">
+              <h2>Project details</h2>
+              <p>Required fields are marked with an asterisk.</p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name *</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="organization">Organization</label>
+                <input id="organization" name="organization" type="text" autocomplete="organization">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="project-type">Project type *</label>
+                <select id="project-type" name="projectType" required>
+                  <option value="">Choose one</option>
+                  <option>Venue or event</option>
+                  <option>Real estate or facility</option>
+                  <option>Museum or heritage site</option>
+                  <option>Construction or job site</option>
+                  <option>Other environment</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="location">Location *</label>
+                <input id="location" name="location" type="text" placeholder="City and state, or site address" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="timeline">Target timeline</label>
+              <input id="timeline" name="timeline" type="text" placeholder="For example, capture needed next month">
+            </div>
+
+            <div class="form-field">
+              <label for="message">What should the scan help you accomplish? *</label>
+              <textarea id="message" name="message" placeholder="Describe the space, approximate size, access considerations, and deliverables you may need." required></textarea>
+            </div>
+
+            <p class="form-disclosure">Submitting opens a prepared draft in your email application. Review it there and press Send to deliver your inquiry.</p>
+            <button class="button button-primary" type="submit">Open email draft <svg aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <a class="brand footer-brand" href="index.html">
+          <img class="brand-logo" src="brand-logo.svg" width="1781" height="703" alt="IRL Scanning and Modelling">
+        </a>
+        <p>Accurate digital records of the places where business, culture, and everyday life happen.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#industries">Industries</a>
+          <a href="index.html#process">Process</a>
+          <a href="#project-form" aria-current="page">Contact</a>
+        </nav>
+      </div>
+      <div class="shell footer-bottom">
+        <p>&copy; 2026 IRL Scanning &amp; Modeling.</p>
+        <p>Structure adapted from <a href="https://colorlib.com/wp/template/ecohosting/">EcoHosting by Colorlib</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Modified for IRL Scanning.</p>
+      </div>
+    </footer>
+  </body>
+</html>
