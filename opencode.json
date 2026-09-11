@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "penpot": {
+      "type": "remote",
+      "url": "https://design.penpot.app/mcp/stream?userToken={file:~/.config/opencode/secrets/penpot-mcp-token}",
+      "enabled": true,
+      "oauth": false,
+      "timeout": 130000
+    }
+  }
+}
