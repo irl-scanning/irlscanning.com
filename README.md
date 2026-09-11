@@ -63,9 +63,11 @@ python -m http.server --directory public 8080
 
 ## Brand assets
 
-The logo, palette, typography, and logomark pattern follow the Penpot
-`Style Guide 2026`. The site self-hosts Nimbus Sans L Bold for display text and
-Geist for body text so the typography does not depend on a third-party CDN.
+The logo, palette, typography, and logomark pattern follow the live tokens in
+Penpot `Style Guide 2026`; those tokens are authoritative when they differ from
+the embedded presentation. The site self-hosts Nimbus Sans L Bold for display
+text and Geist for body text so the typography does not depend on a third-party
+CDN.
 
 Nimbus Sans L is distributed by URW++ under GPL-2.0; its license is included at
 `public/fonts/NIMBUS-SANS-L-LICENSE.txt` and the original package is available

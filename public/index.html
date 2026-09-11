@@ -90,19 +90,15 @@
           <div class="scan-visual" aria-label="Illustration of a venue being captured as a three-dimensional point cloud" role="img">
             <svg viewBox="0 0 640 620" aria-hidden="true">
               <defs>
-                <linearGradient id="scan-surface" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ffbd8a" stop-opacity=".9"/>
-                  <stop offset="1" stop-color="#ff6f00" stop-opacity=".18"/>
+                <linearGradient id="scan-surface" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff6f00"/>
+                  <stop offset="1" stop-color="#a34700"/>
                 </linearGradient>
-                <radialGradient id="scan-beam">
-                  <stop offset="0" stop-color="#ffce00" stop-opacity=".8"/>
-                  <stop offset="1" stop-color="#ff6f00" stop-opacity="0"/>
-                </radialGradient>
                 <filter id="soft-glow">
                   <feGaussianBlur stdDeviation="8"/>
                 </filter>
               </defs>
-              <ellipse cx="325" cy="340" rx="270" ry="170" fill="url(#scan-beam)" filter="url(#soft-glow)" opacity=".55"/>
+              <ellipse cx="325" cy="340" rx="270" ry="170" fill="#ff6f00" filter="url(#soft-glow)" opacity=".18"/>
               <path class="grid-line" d="M40 474 320 610 603 458M76 438l280 136M116 401l279 136M158 365l278 134M202 328l276 134M246 291l275 133M290 254l273 132"/>
               <path class="grid-line" d="m40 474 250-220M94 500l250-221M150 527l248-221M207 554l248-222M264 581l246-222M320 610l243-224"/>
               <g class="venue-shape">
