@@ -34,6 +34,8 @@
   --type-body-size: 27px;
   --type-heading-line: 1;
   --type-body-line: 1.5;
+  --brand-logo-width: 190px;
+  --brand-logo-layout-offset: -15px;
   --shadow: 0 24px 70px rgba(26, 11, 0, 0.12);
   --radius: 28px;
   --shell: min(1180px, calc(100% - 48px));
@@ -128,8 +130,12 @@ svg {
 
 .brand-logo {
   display: block;
-  width: 190px;
+  width: var(--brand-logo-width);
   height: auto;
+}
+
+.footer-brand {
+  margin: var(--brand-logo-layout-offset);
 }
 
 .desktop-nav {
@@ -1480,6 +1486,8 @@ svg {
   :root {
     --shell: calc(100% - 28px);
     --radius: 22px;
+    --brand-logo-width: 155px;
+    --brand-logo-layout-offset: -12.24px;
   }
 
   .section {
@@ -1488,10 +1496,6 @@ svg {
 
   .header-inner {
     min-height: 82px;
-  }
-
-  .brand-logo {
-    width: 155px;
   }
 
   .hero {
