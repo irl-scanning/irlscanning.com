@@ -993,7 +993,7 @@ svg {
 
 .testimonial {
   overflow: hidden;
-  background: var(--yellow);
+  background: var(--light-orange);
 }
 
 .testimonial-inner {
