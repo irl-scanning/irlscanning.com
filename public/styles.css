@@ -522,10 +522,10 @@ svg {
 }
 
 .section-heading > p:last-child,
-.split-heading > p,
-.feature-copy > p,
-.faq-intro > p,
-.contact-copy > p {
+.split-heading > p:not(.eyebrow),
+.feature-copy > p:not(.eyebrow),
+.faq-intro > p:not(.eyebrow),
+.contact-copy > p:not(.eyebrow) {
   color: rgba(26, 11, 0, 0.66);
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
@@ -784,7 +784,7 @@ svg {
   text-transform: uppercase;
 }
 
-.feature-copy > p {
+.feature-copy > p:not(.eyebrow) {
   margin: 28px 0;
 }
 
@@ -885,7 +885,7 @@ svg {
   top: 40px;
 }
 
-.faq-intro > p {
+.faq-intro > p:not(.eyebrow) {
   margin: 24px 0 34px;
 }
 
