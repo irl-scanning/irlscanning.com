@@ -159,23 +159,31 @@ svg {
 
 .desktop-nav a:not(.nav-cta):hover,
 .desktop-nav a:not(.nav-cta):focus-visible {
-  border-color: var(--orange);
+  border-color: var(--blue);
 }
 
 .nav-cta {
   padding: 13px 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
 .nav-cta:hover,
-.nav-cta:focus-visible {
-  border-color: var(--orange);
-  background: var(--orange);
+.nav-cta:focus-visible,
+.mobile-nav summary:hover,
+.mobile-nav summary:focus-visible {
+  border-color: var(--blue);
+  background: var(--blue);
 }
 
 .mobile-nav {
   display: none;
+}
+
+.mobile-nav a:hover {
+  background: var(--blue);
+  color: var(--white)
 }
 
 .hero {
@@ -1356,8 +1364,8 @@ svg {
   }
 
   .mobile-nav summary {
-    padding: 9px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 13px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 999px;
     cursor: pointer;
     font-size: 13px;
