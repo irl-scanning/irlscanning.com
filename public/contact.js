@@ -1,6 +1,26 @@
 const form = document.querySelector("[data-mailto-form]");
 const status = document.querySelector("[data-form-status]");
 
+// Pre-select the Project type from a ?type= link (e.g. contact.html?type=venue).
+(function presetProjectType() {
+  const projectTypeSelect = document.getElementById("project-type");
+  if (!projectTypeSelect) return;
+
+  const presets = {
+    venue: "Venue or event",
+    property: "Real estate or facility",
+    museum: "Museum or heritage site",
+    jobsite: "Construction or job site",
+    other: "Other environment",
+  };
+  const preset = new URLSearchParams(location.search).get("type");
+  const value = presets[preset || ""];
+
+  if (value && Array.from(projectTypeSelect.options).some((o) => o.value === value)) {
+    projectTypeSelect.value = value;
+  }
+})();
+
 if (form && status) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();

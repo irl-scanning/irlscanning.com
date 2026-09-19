@@ -331,6 +331,14 @@ svg {
   background: var(--blue);
 }
 
+.button-small {
+  min-height: 45px;
+  gap: 10px;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -466,7 +474,7 @@ svg {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
-  gap: 70px;
+  gap: 20px;
 }
 
 .section-kicker {
@@ -485,30 +493,6 @@ svg {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
-}
-
-.project-types span,
-.project-types a {
-  min-height: 48px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px;
-  border: 1px solid rgba(26, 11, 0, 0.3);
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.project-types a {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.project-types a:hover,
-.project-types a:focus-visible {
-  background: var(--blue);
 }
 
 .services {
@@ -1561,13 +1545,6 @@ svg {
 
   .scan-label {
     display: none;
-  }
-
-  .project-types span,
-  .project-types a {
-    min-height: 42px;
-    padding: 8px 13px;
-    font-size: 11px;
   }
 
   .section-heading {
