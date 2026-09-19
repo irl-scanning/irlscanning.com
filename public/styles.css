@@ -295,8 +295,7 @@ svg {
 
 .button svg,
 .text-link svg,
-.project-types svg,
-.card-arrow svg {
+.project-types svg {
   width: 20px;
   height: 20px;
   fill: none;
@@ -693,15 +692,6 @@ svg {
   margin: 20px 0 0;
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
-}
-
-.card-arrow {
-  width: 54px;
-  height: 54px;
-  display: grid;
-  place-items: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
 }
 
 .feature {
