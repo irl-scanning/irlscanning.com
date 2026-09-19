@@ -648,7 +648,7 @@ svg {
   min-height: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   padding: 34px;
   border-radius: var(--radius);
   color: var(--ink);
