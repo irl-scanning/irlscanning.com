@@ -197,11 +197,14 @@ svg {
 
 .hero-glow {
   position: absolute;
-  inset: auto -8vw -190px;
-  height: 310px;
-  border-radius: 50% 50% 0 0;
-  background: var(--orange);
-  transform: rotate(-2deg);
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 130px;
+}
+
+.hero-glow path {
+  fill: var(--orange);
 }
 
 .hero-grid {
