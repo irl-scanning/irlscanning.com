@@ -1050,9 +1050,9 @@ svg {
   background: var(--orange);
 }
 
-.testimonial-orbit span:nth-child(1) { top: 30px; left: 105px; }
-.testimonial-orbit span:nth-child(2) { top: 170px; left: -9px; background: var(--blue); }
-.testimonial-orbit span:nth-child(3) { top: 46px; right: 70px; background: var(--pink); }
+.testimonial-orbit span:nth-child(1) { top: 33px; left: 105px; }
+.testimonial-orbit span:nth-child(2) { top: 170px; left: -24px; background: var(--blue); }
+.testimonial-orbit span:nth-child(3) { top: 14px; right: 65px; background: var(--pink); }
 
 .contact {
   position: relative;
