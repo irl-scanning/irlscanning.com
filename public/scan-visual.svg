@@ -19,14 +19,14 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:zoom="2.5062327"
-     inkscape:cx="109.12794"
-     inkscape:cy="456.66151"
+     inkscape:cx="212.8693"
+     inkscape:cy="398.00773"
      inkscape:window-width="3840"
      inkscape:window-height="2071"
      inkscape:window-x="1911"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g25"
+     inkscape:current-layer="svg25"
      showgrid="false" />
   <defs
      id="defs2">
@@ -113,16 +113,17 @@
        id="path6"
        inkscape:label="right" />
     <path
-       d="m 182,320 140,-80 134,65 -142,84 z"
+       d="M 183.12856,318.30716 322,240 455.71786,302.43572 314,389 Z"
        fill="none"
        stroke="#ffffff"
        stroke-opacity="0.68"
        stroke-width="1.5"
        id="path7"
        style="display:inline"
-       inkscape:label="lines-top" />
+       inkscape:label="lines-top"
+       sodipodi:nodetypes="ccccc" />
     <path
-       d="M 182,320 V 450 M 456,432 V 305 M 314,389 V 519 M 226,343 v 130 m 44,-107 v 130 m 91.33333,-135 v 129 m 47.33334,-157 v 128"
+       d="m 183.12856,318.30716 v 130 m 272.5893,-18.87144 v -127 M 314,389 V 519 M 226.75237,341.87144 v 130 m 43.62382,-106.43572 v 130 m 90.8631,-135.29048 v 129 m 47.23928,-157.85476 v 128"
        fill="none"
        stroke="#ffffff"
        stroke-opacity="0.68"
@@ -132,7 +133,7 @@
        inkscape:label="lines-vertical"
        sodipodi:nodetypes="cccccccccccccc" />
     <path
-       d="m 182,392 132,69 142,-87 m -274,76 132,69 142,-87"
+       d="M 183.12856,383.30716 314,454 455.71786,365.93572 M 183.12856,448.30716 314,519 455.71786,429.43572"
        fill="none"
        stroke="#ffffff"
        stroke-opacity="0.68"
