@@ -18,15 +18,16 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="157.15448"
-     inkscape:cy="377.7718"
+     inkscape:zoom="10.024931"
+     inkscape:cx="272.27121"
+     inkscape:cy="561.64976"
      inkscape:window-width="3840"
      inkscape:window-height="2071"
      inkscape:window-x="1911"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg25" />
+     inkscape:current-layer="g12"
+     showgrid="false" />
   <defs
      id="defs2">
     <linearGradient
@@ -145,29 +146,26 @@
      inkscape:label="scanner"
      style="display:inline">
     <path
-       d="m 288.06066,470 h 73.79029 L 351,550 c -13.02496,13.13944 -42.65773,11.9757 -52,0 z"
+       id="path1"
+       style="fill:none;stroke:#ffbd8a;stroke-width:2"
+       d="m 299.89166,552.8048 -15.82579,33.706 m 66.02529,-33.706 15.82579,33.706 M 325,563.1106 V 612"
+       inkscape:label="stand" />
+    <path
+       d="m 288.06066,470 h 73.79029 L 351,550 c 0,0 -1.22964,13.02739 -26.24854,13.02739 C 299.73256,563.02739 299,550 299,550 Z"
        fill="#1a0b00"
        stroke="#ffbd8a"
        stroke-width="2"
        id="path10"
        inkscape:label="body"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccczcc" />
     <ellipse
        cx="325"
        cy="470"
        rx="38"
-       ry="13"
+       ry="22"
        fill="#ff6f00"
        id="ellipse10"
        inkscape:label="top" />
-    <path
-       d="M 304.97671,555.05823 285,605 M 344.84151,554.60378 365,605 M 325,559.40985 325,608"
-       fill="none"
-       stroke="#ffbd8a"
-       stroke-width="2"
-       id="path11"
-       inkscape:label="stand"
-       sodipodi:nodetypes="cccccc" />
     <circle
        cx="325"
        cy="450"
