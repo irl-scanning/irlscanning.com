@@ -420,45 +420,8 @@ svg {
   transform: translateX(35px);
 }
 
-.scan-visual > svg {
+.scan-visual > img {
   width: 100%;
-  overflow: visible;
-}
-
-.grid-line {
-  fill: none;
-  stroke: rgba(255, 189, 138, 0.16);
-  stroke-width: 1;
-}
-
-.venue-shape path:not([fill]) {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.68);
-  stroke-width: 1.5;
-}
-
-.scanner path {
-  stroke: var(--light-orange);
-  stroke-width: 2;
-}
-
-.scan-rings {
-  fill: none;
-  stroke: var(--orange);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 9;
-}
-
-.scan-rings ellipse:nth-child(2) {
-  opacity: 0.6;
-}
-
-.scan-rings ellipse:nth-child(3) {
-  opacity: 0.35;
-}
-
-.points {
-  fill: var(--yellow);
 }
 
 .scan-label {

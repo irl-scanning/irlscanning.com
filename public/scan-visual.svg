@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 620">
+  <style>
+    .grid-line {
+      fill: none;
+      stroke: rgba(255, 189, 138, 0.16);
+      stroke-width: 1;
+    }
+
+    .venue-shape path:not([fill]) {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.68);
+      stroke-width: 1.5;
+    }
+
+    .scanner path {
+      stroke: #ffbd8a;
+      stroke-width: 2;
+    }
+
+    .scan-rings ellipse {
+      fill: none;
+      stroke: #ff6f00;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 9;
+    }
+
+    .scan-rings ellipse:nth-child(2) {
+      opacity: 0.6;
+    }
+
+    .scan-rings ellipse:nth-child(3) {
+      opacity: 0.35;
+    }
+
+    .points circle {
+      fill: #ffce00;
+    }
+  </style>
+  <defs>
+    <linearGradient id="scan-surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6f00"/>
+      <stop offset="1" stop-color="#a34700"/>
+    </linearGradient>
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <ellipse cx="325" cy="340" rx="270" ry="170" fill="#ff6f00" filter="url(#soft-glow)" opacity=".18"/>
+  <path class="grid-line" d="M40 474 320 610 603 458M76 438l280 136M116 401l279 136M158 365l278 134M202 328l276 134M246 291l275 133M290 254l273 132"/>
+  <path class="grid-line" d="m40 474 250-220M94 500l250-221M150 527l248-221M207 554l248-222M264 581l246-222M320 610l243-224"/>
+  <g class="venue-shape">
+    <path d="m145 315 179-104 170 83-180 109-169-88Z" fill="url(#scan-surface)"/>
+    <path d="m145 315 169 88v130l-169-86V315Z" fill="#a34700" fill-opacity=".3"/>
+    <path d="m314 403 180-109v128L314 533V403Z" fill="#1a0b00" fill-opacity=".68"/>
+    <path d="m182 320 140-80 134 65-142 84-132-69Z"/>
+    <path d="M182 320v94l132 69 142-87v-91M314 389v94M224 342v94m45-69v94m90-99v94m49-123v94"/>
+    <path d="m182 368 132 69 142-87M182 414l132 69 142-87"/>
+  </g>
+  <g class="scanner">
+    <path d="M287 470h76l-12 80h-52l-12-80Z" fill="#1a0b00" stroke="#ffbd8a"/>
+    <ellipse cx="325" cy="470" rx="38" ry="13" fill="#ff6f00"/>
+    <path d="m307 550-22 55m58-55 22 55M325 550v58"/>
+    <circle cx="325" cy="450" r="25" fill="#ffce00"/>
+    <circle cx="325" cy="450" r="11" fill="#1a0b00"/>
+  </g>
+  <g class="scan-rings">
+    <ellipse cx="325" cy="450" rx="92" ry="42"/>
+    <ellipse cx="325" cy="450" rx="157" ry="72"/>
+    <ellipse cx="325" cy="450" rx="226" ry="105"/>
+  </g>
+  <g class="points">
+    <circle cx="119" cy="212" r="4"/><circle cx="170" cy="173" r="3"/><circle cx="236" cy="128" r="5"/>
+    <circle cx="314" cy="96" r="3"/><circle cx="390" cy="132" r="4"/><circle cx="465" cy="167" r="3"/>
+    <circle cx="529" cy="224" r="5"/><circle cx="558" cy="300" r="3"/><circle cx="94" cy="287" r="3"/>
+    <circle cx="111" cy="374" r="5"/><circle cx="518" cy="383" r="4"/><circle cx="482" cy="499" r="3"/>
+  </g>
+</svg>
