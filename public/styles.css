@@ -674,7 +674,7 @@ svg {
 .split-heading {
   display: grid;
   grid-template-columns: 1.15fr 0.65fr;
-  align-items: end;
+  align-items: start;
   gap: 100px;
 }
 
@@ -1091,7 +1091,7 @@ svg {
   z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  align-items: end;
+  align-items: start;
   gap: 100px;
 }
 
