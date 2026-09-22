@@ -11,7 +11,7 @@ concurrency:
 jobs:
   deploy:
     if: forgejo.event.comment.body == '!deploy' && forgejo.event.issue.pull_request
-    runs-on: ubuntu-latest
+    runs-on: x86_64-ubuntu-24.04
     steps:
       - name: Authorize request and resolve pull request
         id: preview

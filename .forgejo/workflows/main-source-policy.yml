@@ -7,7 +7,7 @@ on:
 
 jobs:
   require-staging:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Require staging from this repository
         env:
