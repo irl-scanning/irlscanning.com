@@ -18,15 +18,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="10.024931"
-     inkscape:cx="272.27121"
-     inkscape:cy="561.64976"
+     inkscape:zoom="2.5062327"
+     inkscape:cx="109.12794"
+     inkscape:cy="456.66151"
      inkscape:window-width="3840"
      inkscape:window-height="2071"
      inkscape:window-x="1911"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g12"
+     inkscape:current-layer="g25"
      showgrid="false" />
   <defs
      id="defs2">
@@ -225,6 +225,22 @@
      id="g25"
      style="display:inline"
      inkscape:label="constellation">
+    <circle
+       cx="111.68827"
+       cy="137.6115"
+       r="2.2019894"
+       fill="#ffce00"
+       id="circle2"
+       inkscape:label="circle14"
+       style="display:inline;stroke-width:0.733997" />
+    <circle
+       cx="213.4346"
+       cy="487.93811"
+       r="1.8029842"
+       fill="#ffce00"
+       id="circle1"
+       inkscape:label="circle13"
+       style="display:inline;stroke-width:0.600995" />
     <circle
        cx="111"
        cy="374"
