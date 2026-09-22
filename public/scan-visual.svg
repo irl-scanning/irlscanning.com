@@ -18,9 +18,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="4"
-     inkscape:cx="248.875"
-     inkscape:cy="427.625"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="157.15448"
+     inkscape:cy="377.7718"
      inkscape:window-width="3840"
      inkscape:window-height="2071"
      inkscape:window-x="1911"
@@ -145,12 +145,13 @@
      inkscape:label="scanner"
      style="display:inline">
     <path
-       d="m 287,470 h 76 l -12,80 h -52 z"
+       d="m 288.06066,470 h 73.79029 L 351,550 c -13.02496,13.13944 -42.65773,11.9757 -52,0 z"
        fill="#1a0b00"
        stroke="#ffbd8a"
        stroke-width="2"
        id="path10"
-       inkscape:label="body" />
+       inkscape:label="body"
+       sodipodi:nodetypes="ccccc" />
     <ellipse
        cx="325"
        cy="470"
@@ -160,12 +161,13 @@
        id="ellipse10"
        inkscape:label="top" />
     <path
-       d="m 307,550 -22,55 m 58,-55 22,55 m -40,-55 v 58"
+       d="M 304.97671,555.05823 285,605 M 344.84151,554.60378 365,605 M 325,559.40985 325,608"
        fill="none"
        stroke="#ffbd8a"
        stroke-width="2"
        id="path11"
-       inkscape:label="stand" />
+       inkscape:label="stand"
+       sodipodi:nodetypes="cccccc" />
     <circle
        cx="325"
        cy="450"
