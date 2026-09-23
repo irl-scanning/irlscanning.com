@@ -47,7 +47,7 @@ if (form && status) {
       .filter(([, value]) => value && value.trim())
       .map(([label, value]) => `${label}:\n${value.trim()}`)
       .join("\n\n");
-    const mailto = `mailto:hello@irlscanning.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:contact@irlscanning.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     status.textContent = "Your email application should open with a prepared draft. Review it and press Send to deliver your inquiry.";
     window.location.href = mailto;
