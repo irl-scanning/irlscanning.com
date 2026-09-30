@@ -166,7 +166,10 @@ svg {
   padding: 13px 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .nav-cta:hover,
@@ -183,7 +186,7 @@ svg {
 
 .mobile-nav a:hover {
   background: var(--blue);
-  color: var(--white)
+  color: var(--white);
 }
 
 .hero {
@@ -322,7 +325,10 @@ svg {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .button svg,
@@ -542,7 +548,9 @@ svg {
   padding: 40px;
   border-right: 1px solid rgba(26, 11, 0, 0.14);
   border-bottom: 1px solid rgba(26, 11, 0, 0.14);
-  transition: background-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .service-card:hover {
@@ -624,8 +632,12 @@ svg {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(45deg, var(--ink) 0 10%, transparent 30% 70%, var(--ink) 90% 100%);
+  background: linear-gradient(
+    45deg,
+    var(--ink) 0 10%,
+    transparent 30% 70%,
+    var(--ink) 90% 100%
+  );
   pointer-events: none;
 }
 
@@ -791,10 +803,22 @@ svg {
   box-shadow: 0 0 20px var(--yellow);
 }
 
-.cloud-core span:nth-child(1) { top: 0; left: 48%; }
-.cloud-core span:nth-child(2) { top: 42%; left: 5%; }
-.cloud-core span:nth-child(3) { top: 47%; right: 2%; }
-.cloud-core span:nth-child(4) { bottom: 0; left: 52%; }
+.cloud-core span:nth-child(1) {
+  top: 0;
+  left: 48%;
+}
+.cloud-core span:nth-child(2) {
+  top: 42%;
+  left: 5%;
+}
+.cloud-core span:nth-child(3) {
+  top: 47%;
+  right: 2%;
+}
+.cloud-core span:nth-child(4) {
+  bottom: 0;
+  left: 52%;
+}
 
 .feature-art > p {
   position: absolute;
@@ -1013,9 +1037,20 @@ svg {
   background: var(--orange);
 }
 
-.testimonial-orbit span:nth-child(1) { top: 33px; left: 105px; }
-.testimonial-orbit span:nth-child(2) { top: 170px; left: -24px; background: var(--blue); }
-.testimonial-orbit span:nth-child(3) { top: 14px; right: 65px; background: var(--pink); }
+.testimonial-orbit span:nth-child(1) {
+  top: 33px;
+  left: 105px;
+}
+.testimonial-orbit span:nth-child(2) {
+  top: 170px;
+  left: -24px;
+  background: var(--blue);
+}
+.testimonial-orbit span:nth-child(3) {
+  top: 14px;
+  right: 65px;
+  background: var(--pink);
+}
 
 .contact {
   position: relative;
@@ -1044,8 +1079,10 @@ svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, var(--ink) 100px, transparent)        left   /300px 100% no-repeat,
-    linear-gradient(to left, var(--ink) 100px, transparent)         right  /300px 100% no-repeat;
+    linear-gradient(to right, var(--ink) 100px, transparent) left / 300px 100%
+      no-repeat,
+    linear-gradient(to left, var(--ink) 100px, transparent) right / 300px 100%
+      no-repeat;
   pointer-events: none;
 }
 
@@ -1107,8 +1144,14 @@ svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, transparent, var(--ink))            bottom   /100% 120px no-repeat,
-    linear-gradient(-45deg, var(--ink) 0 20%, transparent 40% 60%, var(--ink) 80% 100%);
+    linear-gradient(to bottom, transparent, var(--ink)) bottom / 100% 120px
+      no-repeat,
+    linear-gradient(
+      -45deg,
+      var(--ink) 0 20%,
+      transparent 40% 60%,
+      var(--ink) 80% 100%
+    );
   pointer-events: none;
 }
 
@@ -1520,7 +1563,6 @@ svg {
     height: 220px;
     background-size: 48px auto;
   }
-
 
   .contact-form {
     gap: 22px;
