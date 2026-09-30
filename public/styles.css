@@ -200,6 +200,10 @@ svg {
   color: var(--white);
 }
 
+.hero-about {
+  background: none;
+}
+
 .hero-glow {
   position: absolute;
   bottom: -10px;
@@ -1120,6 +1124,13 @@ svg {
   color: var(--white);
 }
 
+.about-main {
+  min-height: 100vh;
+  padding-top: 90px;
+  background: var(--ink);
+  color: var(--white);
+}
+
 .contact-page-hero {
   position: relative;
   overflow: hidden;
@@ -1287,6 +1298,36 @@ svg {
   border-left: 4px solid var(--orange);
   background: var(--white);
   color: var(--ink);
+}
+
+.about-main::before {
+  content: "";
+  position: absolute;
+  top: 106px;
+  left: -10%;
+  width: 110%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled_Fade_D-T.svg");
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 200px auto;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.about-main::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -10%;
+  width: 110%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled_Fade_U-T.svg");
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-size: 200px auto;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 .footer-main {
@@ -1550,7 +1591,8 @@ svg {
     padding-top: 82px;
   }
 
-  .contact-page-main {
+  .contact-page-main,
+  .about-main {
     padding-top: 82px;
   }
 
