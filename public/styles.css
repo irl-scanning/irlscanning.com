@@ -107,7 +107,8 @@ svg {
 }
 
 .site-header {
-  position: absolute;
+  position: sticky;
+  background: var(--ink);
   inset: 0 0 auto;
   z-index: 20;
   color: var(--white);
@@ -193,7 +194,7 @@ svg {
   position: relative;
   min-height: 900px;
   overflow: hidden;
-  padding-top: 106px;
+  padding-top: 10px;
   background: var(--ink);
   color: var(--white);
 }
@@ -1113,7 +1114,7 @@ svg {
 
 .contact-page-main {
   min-height: 100vh;
-  padding-top: 106px;
+  padding-top: 10px;
   background: var(--ink);
   color: var(--white);
 }
