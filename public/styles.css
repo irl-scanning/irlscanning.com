@@ -16,16 +16,17 @@
 
 :root {
   color-scheme: light;
-  --ink: #1a0b00;
-  --orange: #ff6f00;
-  --dark-orange: #a34700;
-  --light-orange: #ffbd8a;
-  --cream: #fff2e9;
-  --warm-white: #f9f4f2;
   --white: #ffffff;
-  --blue: #0053ce;
-  --yellow: #ffce00;
-  --pink: #ffa1cc;
+  --brand_primary_black: #1a0b00;
+  --brand_primary_orange: #ff6f00;
+  --brand_primary_white: #ffffff;
+  --brand_secondary_cream: #fff2e9;
+  --brand_secondary_orange-dark: #a34700;
+  --brand_secondary_orange-light: #ffbd8a;
+  --brand_secondary_warm-white: #f9f4f2;
+  --brand_accent_blue: #0053ce;
+  --brand_accent_pink: #ffa1cc;
+  --brand_accent_yellow: #ffce00;
   --heading: "Nimbus Sans L", "Helvetica Neue", Arial, sans-serif;
   --body: "Geist", "Helvetica Neue", Arial, sans-serif;
   --type-h1-size: 72px;
@@ -57,8 +58,8 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background: var(--warm-white);
-  color: var(--ink);
+  background: var(--brand_secondary_warm-white);
+  color: var(--brand_primary_black);
   font-family: var(--body);
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
@@ -66,8 +67,8 @@ body {
 }
 
 body::selection {
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--brand_accent_yellow);
+  color: var(--brand_primary_black);
 }
 
 a {
@@ -94,7 +95,7 @@ svg {
   transform: translateY(-160%);
   border-radius: 100px;
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   font-weight: 700;
 }
 
@@ -113,7 +114,7 @@ svg {
 
 .site-header {
   position: sticky;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   inset: 0 0 auto;
   z-index: 20;
   color: var(--white);
@@ -165,7 +166,7 @@ svg {
 
 .desktop-nav a:not(.nav-cta):hover,
 .desktop-nav a:not(.nav-cta):focus-visible {
-  border-color: var(--blue);
+  border-color: var(--brand_accent_blue);
 }
 
 .nav-cta {
@@ -182,8 +183,8 @@ svg {
 .nav-cta:focus-visible,
 .mobile-nav summary:hover,
 .mobile-nav summary:focus-visible {
-  border-color: var(--blue);
-  background: var(--blue);
+  border-color: var(--brand_accent_blue);
+  background: var(--brand_accent_blue);
 }
 
 .mobile-nav {
@@ -191,7 +192,7 @@ svg {
 }
 
 .mobile-nav a:hover {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
   color: var(--white);
 }
 
@@ -200,7 +201,7 @@ svg {
   min-height: 900px;
   overflow: hidden;
   padding-top: 10px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -217,7 +218,7 @@ svg {
 }
 
 .hero-glow path {
-  fill: var(--orange);
+  fill: var(--brand_primary_orange);
 }
 
 .hero-grid {
@@ -270,7 +271,7 @@ svg {
   align-items: center;
   gap: 10px;
   margin: 0 0 24px;
-  color: var(--dark-orange);
+  color: var(--brand_secondary_orange-dark);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -280,11 +281,11 @@ svg {
 .eyebrow span {
   width: 23px;
   height: 2px;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .eyebrow-light {
-  color: var(--light-orange);
+  color: var(--brand_secondary_orange-light);
 }
 
 .hero h1,
@@ -305,7 +306,7 @@ svg {
 }
 
 .hero h1 em {
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font-style: normal;
 }
 
@@ -359,24 +360,24 @@ svg {
 }
 
 .button-primary {
-  background: var(--orange);
-  color: var(--ink);
+  background: var(--brand_primary_orange);
+  color: var(--brand_primary_black);
   box-shadow: 0 14px 38px rgba(255, 111, 0, 0.25);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--yellow);
+  background: var(--brand_accent_yellow);
 }
 
 .button-dark {
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
 .button-dark:hover,
 .button-dark:focus-visible {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
 }
 
 .button-small {
@@ -391,7 +392,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--dark-orange);
+  color: var(--brand_secondary_orange-dark);
   font-size: 14px;
   font-weight: 700;
   text-underline-offset: 6px;
@@ -465,8 +466,8 @@ svg {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--yellow);
-  box-shadow: 0 0 12px var(--yellow);
+  background: var(--brand_accent_yellow);
+  box-shadow: 0 0 12px var(--brand_accent_yellow);
 }
 
 .scan-label-bottom {
@@ -477,7 +478,7 @@ svg {
 .brief-strip {
   position: relative;
   z-index: 4;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .brief-grid {
@@ -490,7 +491,7 @@ svg {
 
 .section-kicker {
   margin-bottom: 8px;
-  color: var(--ink);
+  color: var(--brand_primary_black);
 }
 
 .brief-grid h2 {
@@ -507,7 +508,7 @@ svg {
 }
 
 .services {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .section-heading {
@@ -578,14 +579,14 @@ svg {
   place-items: center;
   margin-bottom: 46px;
   border-radius: 18px;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .icon-box svg {
   width: 30px;
   height: 30px;
   fill: none;
-  stroke: var(--ink);
+  stroke: var(--brand_primary_black);
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -593,12 +594,12 @@ svg {
 
 .service-card:nth-child(2) .icon-box,
 .service-card:nth-child(5) .icon-box {
-  background: var(--yellow);
+  background: var(--brand_accent_yellow);
 }
 
 .service-card:nth-child(3) .icon-box,
 .service-card:nth-child(6) .icon-box {
-  background: var(--pink);
+  background: var(--brand_accent_pink);
 }
 
 .service-card h3,
@@ -619,7 +620,7 @@ svg {
 .industries {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -644,9 +645,9 @@ svg {
   inset: 0;
   background: linear-gradient(
     45deg,
-    var(--ink) 0 10%,
+    var(--brand_primary_black) 0 10%,
     transparent 30% 70%,
-    var(--ink) 90% 100%
+    var(--brand_primary_black) 90% 100%
   );
   pointer-events: none;
 }
@@ -681,7 +682,7 @@ svg {
   justify-content: start;
   padding: 34px;
   border-radius: var(--radius);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   transition: transform 180ms ease;
 }
 
@@ -690,15 +691,15 @@ svg {
 }
 
 .industry-card-orange {
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .industry-card-cream {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .industry-card-blue {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
   color: var(--white);
 }
 
@@ -726,7 +727,7 @@ svg {
 }
 
 .feature {
-  background: var(--warm-white);
+  background: var(--brand_secondary_warm-white);
 }
 
 .feature-grid {
@@ -741,7 +742,7 @@ svg {
   min-height: 590px;
   overflow: hidden;
   border-radius: var(--radius);
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .feature-art::before,
@@ -756,7 +757,7 @@ svg {
   height: 390px;
   top: 100px;
   left: 75px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   box-shadow: 0 0 0 60px rgba(255, 206, 0, 0.26);
 }
 
@@ -765,7 +766,7 @@ svg {
   height: 190px;
   right: -50px;
   bottom: -30px;
-  background: var(--pink);
+  background: var(--brand_accent_pink);
 }
 
 .cloud-ring {
@@ -809,8 +810,8 @@ svg {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--yellow);
-  box-shadow: 0 0 20px var(--yellow);
+  background: var(--brand_accent_yellow);
+  box-shadow: 0 0 20px var(--brand_accent_yellow);
 }
 
 .cloud-core span:nth-child(1) {
@@ -869,14 +870,14 @@ svg {
   height: 25px;
   padding: 4px;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
   fill: none;
-  stroke: var(--ink);
+  stroke: var(--brand_primary_black);
   stroke-width: 2.4;
 }
 
 .process {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
   color: var(--white);
 }
 
@@ -929,7 +930,7 @@ svg {
 }
 
 .faq {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .faq-grid {
@@ -974,7 +975,7 @@ svg {
   position: absolute;
   top: 25px;
   right: 10px;
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font: 400 30px/1 var(--body);
 }
 
@@ -990,7 +991,7 @@ svg {
 
 .testimonial {
   overflow: hidden;
-  background: var(--light-orange);
+  background: var(--brand_secondary_orange-light);
 }
 
 .testimonial-inner {
@@ -1004,7 +1005,7 @@ svg {
 .quote-mark {
   align-self: start;
   margin-top: 95px;
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font: 700 140px/1 var(--heading);
 }
 
@@ -1044,7 +1045,7 @@ svg {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .testimonial-orbit span:nth-child(1) {
@@ -1054,18 +1055,18 @@ svg {
 .testimonial-orbit span:nth-child(2) {
   top: 170px;
   left: -24px;
-  background: var(--blue);
+  background: var(--brand_accent_blue);
 }
 .testimonial-orbit span:nth-child(3) {
   top: 14px;
   right: 65px;
-  background: var(--pink);
+  background: var(--brand_accent_pink);
 }
 
 .contact {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -1089,9 +1090,9 @@ svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, var(--ink) 100px, transparent) left / 300px 100%
+    linear-gradient(to right, var(--brand_primary_black) 100px, transparent) left / 300px 100%
       no-repeat,
-    linear-gradient(to left, var(--ink) 100px, transparent) right / 300px 100%
+    linear-gradient(to left, var(--brand_primary_black) 100px, transparent) right / 300px 100%
       no-repeat;
   pointer-events: none;
 }
@@ -1117,14 +1118,14 @@ svg {
 
 .site-footer {
   padding: 72px 0 28px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
 .contact-page-main {
   flex: 1;
   padding-top: 10px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -1132,7 +1133,7 @@ svg {
   position: relative;
   flex: 1;
   padding-top: 90px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -1162,13 +1163,13 @@ svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, transparent, var(--ink)) bottom / 100% 120px
+    linear-gradient(to bottom, transparent, var(--brand_primary_black)) bottom / 100% 120px
       no-repeat,
     linear-gradient(
       -45deg,
-      var(--ink) 0 20%,
+      var(--brand_primary_black) 0 20%,
       transparent 40% 60%,
-      var(--ink) 80% 100%
+      var(--brand_primary_black) 80% 100%
     );
   pointer-events: none;
 }
@@ -1205,7 +1206,7 @@ svg {
 .contact-direct {
   display: inline-flex;
   margin-top: 34px;
-  color: var(--light-orange);
+  color: var(--brand_secondary_orange-light);
   font-weight: 700;
   text-underline-offset: 6px;
 }
@@ -1215,8 +1216,8 @@ svg {
   gap: 25px;
   padding: 48px;
   border-radius: var(--radius);
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--brand_secondary_cream);
+  color: var(--brand_primary_black);
   box-shadow: var(--shadow);
 }
 
@@ -1264,7 +1265,7 @@ svg {
   border: 1px solid rgba(26, 11, 0, 0.25);
   border-radius: 12px;
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   font: 400 16px/1.5 var(--body);
 }
 
@@ -1276,7 +1277,7 @@ svg {
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-color: var(--orange);
+  border-color: var(--brand_primary_orange);
   outline: 3px solid rgba(255, 111, 0, 0.2);
   outline-offset: 1px;
 }
@@ -1300,9 +1301,9 @@ svg {
 
 .form-status:not(:empty) {
   padding: 12px 14px;
-  border-left: 4px solid var(--orange);
+  border-left: 4px solid var(--brand_primary_orange);
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
 }
 
 .about-main::before {
@@ -1372,7 +1373,7 @@ svg {
 .footer-main nav a:focus-visible,
 .footer-bottom a:hover,
 .footer-bottom a:focus-visible {
-  color: var(--orange);
+  color: var(--brand_primary_orange);
 }
 
 .footer-bottom {
@@ -1395,7 +1396,7 @@ svg {
 }
 
 :focus-visible {
-  outline: 3px solid var(--yellow);
+  outline: 3px solid var(--brand_accent_yellow);
   outline-offset: 4px;
 }
 
@@ -1472,7 +1473,7 @@ svg {
     overflow: hidden;
     border-radius: 16px;
     background: var(--white);
-    color: var(--ink);
+    color: var(--brand_primary_black);
     box-shadow: var(--shadow);
   }
 
