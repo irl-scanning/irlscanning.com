@@ -1,18 +1,360 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="IRL Scanning turns physical places into useful digital spaces.">
-    <title>IRL Scanning</title>
+    <meta name="description" content="IRL Scanning creates accurate 3D digital records of venues, properties, museums, and complex environments.">
+    <meta name="theme-color" content="#1a0b00">
+    <title>IRL Scanning | Physical spaces, made digital</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="preload" href="fonts/nimbus-sans-l-bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main>
-      <p class="eyebrow">IRL Scanning</p>
-      <h1>Reality,<br>ready to use.</h1>
-      <p class="lede">We turn physical places into precise digital spaces.</p>
-      <div class="status"><span></span> Site pipeline online</div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <svg class="icon-library" aria-hidden="true">
+      <symbol id="icon-building" viewBox="0 0 32 32">
+        <path d="M5 28V9l11-5 11 5v19M10 13h3m6 0h3m-12 6h3m6 0h3m-12 6h3m6 0h3M3 28h26"/>
+      </symbol>
+      <symbol id="icon-cube" viewBox="0 0 32 32">
+        <path d="m16 3 12 6.5v13L16 29 4 22.5v-13L16 3Zm0 13L4 9.5M16 16l12-6.5M16 16v13"/>
+      </symbol>
+      <symbol id="icon-measure" viewBox="0 0 32 32">
+        <path d="M5 26 26 5l3 3L8 29l-3-3Zm5-5 3 3m1-7 3 3m1-7 3 3m1-7 3 3"/>
+      </symbol>
+      <symbol id="icon-camera" viewBox="0 0 32 32">
+        <path d="M4 10h6l2-4h8l2 4h6v17H4V10Zm12 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/>
+      </symbol>
+      <symbol id="icon-layers" viewBox="0 0 32 32">
+        <path d="m16 4 13 7-13 7L3 11l13-7Zm-11 13 11 6 11-6M5 23l11 6 11-6"/>
+      </symbol>
+      <symbol id="icon-share" viewBox="0 0 32 32">
+        <path d="M22 8 10 15m12 9-12-7M26 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM6 13a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm20 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="brand-logo.svg" width="1781" height="703" alt="IRL Scanning and Modeling">
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="contact.html">Plan a scan</a>
+        </nav>
+
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#process">Process</a>
+            <a href="#faq">FAQ</a>
+            <a href="contact.html">Plan a scan</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light"><span></span> Spatial capture for the real world</p>
+            <h1>Physical spaces,<br><em>made digital.</em></h1>
+            <p class="hero-lede">We create precise, navigable 3D records of venues, properties, exhibits, and environments so your team can inspect, plan, preserve, and share from anywhere.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Start a project <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+              <a class="text-link text-link-light" href="#industries">Explore applications <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+            </div>
+            <dl class="hero-stats">
+              <div><dt>Millimeter</dt><dd>detail where required</dd></div>
+              <div><dt>Any scale</dt><dd>rooms to campuses</dd></div>
+              <div><dt>Useful data</dt><dd>delivered your way</dd></div>
+            </dl>
+          </div>
+
+          <div class="scan-visual" aria-label="Illustration of a venue being captured as a three-dimensional point cloud" role="img">
+            <svg viewBox="0 0 640 620" aria-hidden="true">
+              <defs>
+                <linearGradient id="scan-surface" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff6f00"/>
+                  <stop offset="1" stop-color="#a34700"/>
+                </linearGradient>
+                <filter id="soft-glow">
+                  <feGaussianBlur stdDeviation="8"/>
+                </filter>
+              </defs>
+              <ellipse cx="325" cy="340" rx="270" ry="170" fill="#ff6f00" filter="url(#soft-glow)" opacity=".18"/>
+              <path class="grid-line" d="M40 474 320 610 603 458M76 438l280 136M116 401l279 136M158 365l278 134M202 328l276 134M246 291l275 133M290 254l273 132"/>
+              <path class="grid-line" d="m40 474 250-220M94 500l250-221M150 527l248-221M207 554l248-222M264 581l246-222M320 610l243-224"/>
+              <g class="venue-shape">
+                <path d="m145 315 179-104 170 83-180 109-169-88Z" fill="url(#scan-surface)"/>
+                <path d="m145 315 169 88v130l-169-86V315Z" fill="#a34700" fill-opacity=".3"/>
+                <path d="m314 403 180-109v128L314 533V403Z" fill="#1a0b00" fill-opacity=".68"/>
+                <path d="m182 320 140-80 134 65-142 84-132-69Z"/>
+                <path d="M182 320v94l132 69 142-87v-91M314 389v94M224 342v94m45-69v94m90-99v94m49-123v94"/>
+                <path d="m182 368 132 69 142-87M182 414l132 69 142-87"/>
+              </g>
+              <g class="scanner">
+                <path d="M287 470h76l-12 80h-52l-12-80Z" fill="#1a0b00" stroke="#ffbd8a"/>
+                <ellipse cx="325" cy="470" rx="38" ry="13" fill="#ff6f00"/>
+                <path d="m307 550-22 55m58-55 22 55M325 550v58"/>
+                <circle cx="325" cy="450" r="25" fill="#ffce00"/>
+                <circle cx="325" cy="450" r="11" fill="#1a0b00"/>
+              </g>
+              <g class="scan-rings">
+                <ellipse cx="325" cy="450" rx="92" ry="42"/>
+                <ellipse cx="325" cy="450" rx="157" ry="72"/>
+                <ellipse cx="325" cy="450" rx="226" ry="105"/>
+              </g>
+              <g class="points">
+                <circle cx="119" cy="212" r="4"/><circle cx="170" cy="173" r="3"/><circle cx="236" cy="128" r="5"/>
+                <circle cx="314" cy="96" r="3"/><circle cx="390" cy="132" r="4"/><circle cx="465" cy="167" r="3"/>
+                <circle cx="529" cy="224" r="5"/><circle cx="558" cy="300" r="3"/><circle cx="94" cy="287" r="3"/>
+                <circle cx="111" cy="374" r="5"/><circle cx="518" cy="383" r="4"/><circle cx="482" cy="499" r="3"/>
+              </g>
+            </svg>
+            <div class="scan-label scan-label-top"><span></span> Capture active</div>
+            <div class="scan-label scan-label-bottom">12.4M spatial points</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="brief-strip" aria-labelledby="brief-title">
+        <div class="shell brief-grid">
+          <div>
+            <p class="section-kicker">Your place, captured</p>
+            <h2 id="brief-title">What needs scanning?</h2>
+          </div>
+          <div class="project-types">
+            <span>Venue</span><span>Property</span><span>Museum</span><span>Job site</span>
+            <a href="contact.html">Something else <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="shell">
+          <div class="section-heading centered">
+            <p class="eyebrow"><span></span> More than a virtual tour</p>
+            <h2>Reality you can work with.</h2>
+            <p>Every capture is shaped around what your team needs to understand, communicate, or build next.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-building"/></svg></span>
+              <h3>Complete environments</h3>
+              <p>Capture interiors, exteriors, circulation, and context in one coherent digital record.</p>
+            </article>
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-cube"/></svg></span>
+              <h3>Spatially accurate models</h3>
+              <p>Turn field conditions into measured geometry for planning, documentation, and coordination.</p>
+            </article>
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-camera"/></svg></span>
+              <h3>Immersive walkthroughs</h3>
+              <p>Let stakeholders revisit a place remotely without scheduling another trip to site.</p>
+            </article>
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-measure"/></svg></span>
+              <h3>Measurement-ready data</h3>
+              <p>Answer dimensional questions from the captured space and reduce repeat site visits.</p>
+            </article>
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-layers"/></svg></span>
+              <h3>Flexible deliverables</h3>
+              <p>Receive point clouds, meshes, floor plans, media, or platform-ready outputs.</p>
+            </article>
+            <article class="service-card">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-share"/></svg></span>
+              <h3>Easy team access</h3>
+              <p>Share one reliable view of the space with owners, designers, operators, and partners.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="industries section" id="industries">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow eyebrow-light"><span></span> Built around your environment</p>
+              <h2>One capture.<br>Many ways forward.</h2>
+            </div>
+            <p>A useful scan starts with the decisions it needs to support. We tailor coverage, resolution, and delivery to the place and the people using it.</p>
+          </div>
+          <div class="industry-grid">
+            <article class="industry-card industry-card-orange">
+              <span class="card-number">01</span>
+              <div>
+                <p class="card-label">Venues + events</p>
+                <h3>Plan the room before anyone loads in.</h3>
+                <p>Document access, sightlines, infrastructure, staging, and guest flow for faster coordination.</p>
+              </div>
+              <span class="card-arrow"><svg aria-hidden="true"><use href="#icon-arrow"/></svg></span>
+            </article>
+            <article class="industry-card industry-card-cream">
+              <span class="card-number">02</span>
+              <div>
+                <p class="card-label">Real estate + facilities</p>
+                <h3>Make every square foot easier to understand.</h3>
+                <p>Support listings, renovations, operations, and remote due diligence with a lasting spatial record.</p>
+              </div>
+              <span class="card-arrow"><svg aria-hidden="true"><use href="#icon-arrow"/></svg></span>
+            </article>
+            <article class="industry-card industry-card-blue">
+              <span class="card-number">03</span>
+              <div>
+                <p class="card-label">Museums + heritage</p>
+                <h3>Preserve context, not just objects.</h3>
+                <p>Create accessible records of exhibitions, collections, and culturally significant environments.</p>
+              </div>
+              <span class="card-arrow"><svg aria-hidden="true"><use href="#icon-arrow"/></svg></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature section">
+        <div class="shell feature-grid">
+          <div class="feature-art point-cloud" aria-hidden="true">
+            <div class="cloud-ring ring-one"></div>
+            <div class="cloud-ring ring-two"></div>
+            <div class="cloud-ring ring-three"></div>
+            <div class="cloud-core"><span></span><span></span><span></span><span></span></div>
+            <p>Digital twin / 01</p>
+          </div>
+          <div class="feature-copy">
+            <p class="eyebrow"><span></span> A reliable source of truth</p>
+            <h2>Keep the site close, even when you are not.</h2>
+            <p>A scan freezes real-world conditions at a useful moment in time. Teams can return to it whenever questions emerge, compare changes, and move work forward with shared spatial context.</p>
+            <ul class="check-list">
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg> Reduce avoidable return visits</li>
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg> Align remote stakeholders faster</li>
+              <li><svg aria-hidden="true"><use href="#icon-check"/></svg> Preserve a visual record over time</li>
+            </ul>
+            <a class="text-link" href="#process">See how capture works <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="process section" id="process">
+        <div class="shell">
+          <div class="section-heading centered">
+            <p class="eyebrow eyebrow-light"><span></span> Clear from brief to delivery</p>
+            <h2>A simple capture process.</h2>
+          </div>
+          <ol class="process-grid">
+            <li>
+              <span>01</span>
+              <h3>Define the outcome</h3>
+              <p>We learn about the environment, access, accuracy, and deliverables your project requires.</p>
+            </li>
+            <li>
+              <span>02</span>
+              <h3>Capture on site</h3>
+              <p>Our team documents the agreed areas efficiently while working around your operations.</p>
+            </li>
+            <li>
+              <span>03</span>
+              <h3>Process + verify</h3>
+              <p>We align, clean, and quality-check the data so the result is coherent and dependable.</p>
+            </li>
+            <li>
+              <span>04</span>
+              <h3>Deliver for use</h3>
+              <p>Your team receives practical outputs, organized for the platforms and workflows that follow.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="faq section" id="faq">
+        <div class="shell faq-grid">
+          <div class="faq-intro">
+            <p class="eyebrow"><span></span> Common questions</p>
+            <h2>Before we scan.</h2>
+            <p>Every environment is different. These are the basics; we will scope the specifics with you.</p>
+            <a class="button button-dark" href="contact.html">Discuss your site</a>
+          </div>
+          <div class="questions">
+            <details open>
+              <summary>What kinds of spaces can you capture?</summary>
+              <p>Commercial interiors, venues, residential and industrial properties, museums, exhibitions, construction sites, and other accessible environments.</p>
+            </details>
+            <details>
+              <summary>How accurate are the scans?</summary>
+              <p>Accuracy depends on the capture method and project need. We establish the required tolerance during scoping and choose the appropriate equipment and workflow.</p>
+            </details>
+            <details>
+              <summary>What files or platforms can you deliver?</summary>
+              <p>Deliverables may include hosted walkthroughs, point clouds, meshes, plans, imagery, and common exchange formats. We align delivery with your downstream tools.</p>
+            </details>
+            <details>
+              <summary>Can scanning happen while a site is operating?</summary>
+              <p>Often, yes. We plan routes and timing around access, privacy, safety, and operational constraints to minimize disruption.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial">
+        <div class="shell testimonial-inner">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>
+            <p>The value is not just seeing a space. It is having the space available when the next question comes up.</p>
+            <footer>Built for operators, designers, owners, and storytellers.</footer>
+          </blockquote>
+          <div class="testimonial-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="shell contact-inner">
+          <div>
+            <p class="eyebrow eyebrow-light"><span></span> Have a place in mind?</p>
+            <h2>Let’s bring it<br>into focus.</h2>
+          </div>
+          <div class="contact-copy">
+            <p>Tell us what you need to capture, where it is, and what you want to do with the result. We will help shape the right approach.</p>
+            <a class="button button-primary" href="contact.html">Tell us about your project <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <a class="brand footer-brand" href="#top">
+          <img class="brand-logo" src="brand-logo-vertical.svg" width="354" height="279" alt="IRL Scanning and Modeling">
+        </a>
+        <p>Accurate digital records of the places where business, culture, and everyday life happen.</p>
+        <nav aria-label="Footer navigation">
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#process">Process</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="shell footer-bottom">
+        <p>&copy; 2026 IRL Scanning &amp; Modeling.</p>
+        <p>Structure adapted from <a href="https://colorlib.com/wp/template/ecohosting/">EcoHosting by Colorlib</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Modified for IRL Scanning.</p>
+      </div>
+    </footer>
   </body>
 </html>

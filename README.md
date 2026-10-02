@@ -60,3 +60,47 @@ Serve `public/` with any static HTTP server, for example:
 ```bash
 python -m http.server --directory public 8080
 ```
+
+## Brand assets
+
+The logo, palette, typography, and logomark pattern follow the live tokens in
+Penpot `Style Guide 2026`; those tokens are authoritative when they differ from
+the embedded presentation. The site self-hosts Nimbus Sans L Bold for display
+text and Geist for body text so the typography does not depend on a third-party
+CDN.
+
+Nimbus Sans L is distributed by URW++ under GPL-2.0; its license is included at
+`public/fonts/NIMBUS-SANS-L-LICENSE.txt` and the original package is available
+from <https://www.fontsquirrel.com/fonts/nimbus-sans-l>. Geist is distributed
+by Vercel under the SIL Open Font License 1.1; its license is included at
+`public/fonts/GEIST-LICENSE.txt`.
+
+## Contact form
+
+`public/contact.html` contains a static mailto form. Its small progressive
+enhancement script builds a structured draft addressed to
+`hello@irlscanning.com` and opens the visitor's configured email application;
+the visitor must send the draft from that application. No form data is posted
+to the site or a third-party service.
+
+## Penpot MCP
+
+This repository configures OpenCode to use Penpot's hosted MCP server. The MCP
+key is read from `~/.config/opencode/secrets/penpot-mcp-token` instead of being
+committed in `opencode.json`.
+
+Create the user-level secret file before starting OpenCode:
+
+```sh
+install -d -m 700 "$HOME/.config/opencode/secrets"
+umask 077
+"${EDITOR:-vi}" "$HOME/.config/opencode/secrets/penpot-mcp-token"
+chmod 600 "$HOME/.config/opencode/secrets/penpot-mcp-token"
+```
+
+The file must contain only the MCP key from **Your account -> Integrations ->
+MCP Server** in Penpot. It must not contain the complete server URL.
+
+Open a Penpot design and select **File -> MCP Server -> Connect**. Keep its
+Penpot tab open while using the MCP. After regenerating the MCP key in Penpot,
+replace the contents of the user-level secret file and restart OpenCode.
