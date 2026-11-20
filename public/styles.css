@@ -16,16 +16,17 @@
 
 :root {
   color-scheme: light;
-  --ink: #1a0b00;
-  --orange: #ff6f00;
-  --dark-orange: #a34700;
-  --light-orange: #ffbd8a;
-  --cream: #fff2e9;
-  --warm-white: #f9f4f2;
   --white: #ffffff;
-  --blue: #0061ef;
-  --yellow: #ffce00;
-  --pink: #ffa1cc;
+  --brand_primary_black: #1a0b00;
+  --brand_primary_orange: #ff6f00;
+  --brand_primary_white: #ffffff;
+  --brand_secondary_cream: #fff2e9;
+  --brand_secondary_orange-dark: #a34700;
+  --brand_secondary_orange-light: #ffbd8a;
+  --brand_secondary_warm-white: #f9f4f2;
+  --brand_accent_blue: #0053ce;
+  --brand_accent_pink: #ffa1cc;
+  --brand_accent_yellow: #ffce00;
   --heading: "Nimbus Sans L", "Helvetica Neue", Arial, sans-serif;
   --body: "Geist", "Helvetica Neue", Arial, sans-serif;
   --type-h1-size: 72px;
@@ -47,13 +48,18 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 106px;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   overflow-x: hidden;
-  background: var(--warm-white);
-  color: var(--ink);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--brand_secondary_warm-white);
+  color: var(--brand_primary_black);
   font-family: var(--body);
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
@@ -61,8 +67,8 @@ body {
 }
 
 body::selection {
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--brand_accent_yellow);
+  color: var(--brand_primary_black);
 }
 
 a {
@@ -89,7 +95,7 @@ svg {
   transform: translateY(-160%);
   border-radius: 100px;
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   font-weight: 700;
 }
 
@@ -107,7 +113,8 @@ svg {
 }
 
 .site-header {
-  position: absolute;
+  position: sticky;
+  background: var(--brand_primary_black);
   inset: 0 0 auto;
   z-index: 20;
   color: var(--white);
@@ -159,53 +166,59 @@ svg {
 
 .desktop-nav a:not(.nav-cta):hover,
 .desktop-nav a:not(.nav-cta):focus-visible {
-  border-color: var(--orange);
+  border-color: var(--brand_accent_blue);
 }
 
 .nav-cta {
   padding: 13px 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .nav-cta:hover,
-.nav-cta:focus-visible {
-  border-color: var(--orange);
-  background: var(--orange);
+.nav-cta:focus-visible,
+.mobile-nav summary:hover,
+.mobile-nav summary:focus-visible {
+  border-color: var(--brand_accent_blue);
+  background: var(--brand_accent_blue);
 }
 
 .mobile-nav {
   display: none;
 }
 
+.mobile-nav a:hover {
+  background: var(--brand_accent_blue);
+  color: var(--white);
+}
+
 .hero {
   position: relative;
   min-height: 900px;
   overflow: hidden;
-  padding-top: 106px;
-  background: var(--ink);
+  padding-top: 10px;
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -360px;
-  left: -250px;
-  width: 660px;
-  height: 660px;
-  border: 130px solid rgba(255, 111, 0, 0.1);
-  border-radius: 46% 54% 68% 32%;
-  transform: rotate(24deg);
+.hero-about {
+  background: none;
 }
 
 .hero-glow {
   position: absolute;
-  inset: auto -8vw -190px;
-  height: 310px;
-  border-radius: 50% 50% 0 0;
-  background: var(--orange);
-  transform: rotate(-2deg);
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 130px;
+}
+
+.hero-glow path {
+  fill: var(--brand_primary_orange);
 }
 
 .hero-grid {
@@ -219,13 +232,46 @@ svg {
   padding-block: 70px 110px;
 }
 
+/* Full logo option */
+/* .hero-grid::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -120px;
+  width: 580px;
+  height: 580px;
+  background-image: url("favicon.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+  pointer-events: none;
+} */
+
+/* inverted logo upper bar option */
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  top: -1800px;
+  left: -1100px;
+  width: 2080px;
+  height: 2080px;
+  background-image: url("favicon.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+  transform: scaleX(-1) rotate(180deg);
+  pointer-events: none;
+}
+
 .eyebrow,
 .section-kicker {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 0 0 24px;
-  color: var(--dark-orange);
+  color: var(--brand_secondary_orange-dark);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -235,11 +281,11 @@ svg {
 .eyebrow span {
   width: 23px;
   height: 2px;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .eyebrow-light {
-  color: var(--light-orange);
+  color: var(--brand_secondary_orange-light);
 }
 
 .hero h1,
@@ -260,7 +306,7 @@ svg {
 }
 
 .hero h1 em {
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font-style: normal;
 }
 
@@ -290,13 +336,15 @@ svg {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .button svg,
 .text-link svg,
-.project-types svg,
-.card-arrow svg {
+.project-types svg {
   width: 20px;
   height: 20px;
   fill: none;
@@ -312,31 +360,39 @@ svg {
 }
 
 .button-primary {
-  background: var(--orange);
-  color: var(--ink);
+  background: var(--brand_primary_orange);
+  color: var(--brand_primary_black);
   box-shadow: 0 14px 38px rgba(255, 111, 0, 0.25);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--yellow);
+  background: var(--brand_accent_yellow);
 }
 
 .button-dark {
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
 .button-dark:hover,
 .button-dark:focus-visible {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
+}
+
+.button-small {
+  min-height: 45px;
+  gap: 10px;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--dark-orange);
+  color: var(--brand_secondary_orange-dark);
   font-size: 14px;
   font-weight: 700;
   text-underline-offset: 6px;
@@ -381,45 +437,8 @@ svg {
   transform: translateX(35px);
 }
 
-.scan-visual > svg {
+.scan-visual > img {
   width: 100%;
-  overflow: visible;
-}
-
-.grid-line {
-  fill: none;
-  stroke: rgba(255, 189, 138, 0.16);
-  stroke-width: 1;
-}
-
-.venue-shape path:not([fill]) {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.68);
-  stroke-width: 1.5;
-}
-
-.scanner path {
-  stroke: var(--light-orange);
-  stroke-width: 2;
-}
-
-.scan-rings {
-  fill: none;
-  stroke: var(--orange);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 9;
-}
-
-.scan-rings ellipse:nth-child(2) {
-  opacity: 0.6;
-}
-
-.scan-rings ellipse:nth-child(3) {
-  opacity: 0.35;
-}
-
-.points {
-  fill: var(--yellow);
 }
 
 .scan-label {
@@ -447,8 +466,8 @@ svg {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--yellow);
-  box-shadow: 0 0 12px var(--yellow);
+  background: var(--brand_accent_yellow);
+  box-shadow: 0 0 12px var(--brand_accent_yellow);
 }
 
 .scan-label-bottom {
@@ -459,7 +478,7 @@ svg {
 .brief-strip {
   position: relative;
   z-index: 4;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .brief-grid {
@@ -467,12 +486,12 @@ svg {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
-  gap: 70px;
+  gap: 20px;
 }
 
 .section-kicker {
   margin-bottom: 8px;
-  color: var(--ink);
+  color: var(--brand_primary_black);
 }
 
 .brief-grid h2 {
@@ -488,32 +507,8 @@ svg {
   gap: 10px;
 }
 
-.project-types span,
-.project-types a {
-  min-height: 48px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px;
-  border: 1px solid rgba(26, 11, 0, 0.3);
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.project-types a {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.project-types a:hover,
-.project-types a:focus-visible {
-  background: var(--blue);
-}
-
 .services {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .section-heading {
@@ -539,10 +534,9 @@ svg {
 }
 
 .section-heading > p:last-child,
-.split-heading > p,
-.feature-copy > p,
-.faq-intro > p,
-.contact-copy > p {
+.split-heading > p:not(.eyebrow),
+.feature-copy > p:not(.eyebrow),
+.faq-intro > p:not(.eyebrow) {
   color: rgba(26, 11, 0, 0.66);
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
@@ -565,7 +559,9 @@ svg {
   padding: 40px;
   border-right: 1px solid rgba(26, 11, 0, 0.14);
   border-bottom: 1px solid rgba(26, 11, 0, 0.14);
-  transition: background-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .service-card:hover {
@@ -583,14 +579,14 @@ svg {
   place-items: center;
   margin-bottom: 46px;
   border-radius: 18px;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .icon-box svg {
   width: 30px;
   height: 30px;
   fill: none;
-  stroke: var(--ink);
+  stroke: var(--brand_primary_black);
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -598,12 +594,12 @@ svg {
 
 .service-card:nth-child(2) .icon-box,
 .service-card:nth-child(5) .icon-box {
-  background: var(--yellow);
+  background: var(--brand_accent_yellow);
 }
 
 .service-card:nth-child(3) .icon-box,
 .service-card:nth-child(6) .icon-box {
-  background: var(--pink);
+  background: var(--brand_accent_pink);
 }
 
 .service-card h3,
@@ -622,20 +618,55 @@ svg {
 }
 
 .industries {
-  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  background: var(--brand_primary_black);
   color: var(--white);
+}
+
+.industries::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 110%;
+  height: 110%;
+  background-image: url("images/IRL_Logomark_tiled_atomic.svg");
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: 700px auto;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.industries::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    var(--brand_primary_black) 0 10%,
+    transparent 30% 70%,
+    var(--brand_primary_black) 90% 100%
+  );
+  pointer-events: none;
+}
+
+.industries > .shell {
+  position: relative;
+  z-index: 1;
 }
 
 .split-heading {
   display: grid;
   grid-template-columns: 1.15fr 0.65fr;
-  align-items: end;
+  align-items: start;
   gap: 100px;
 }
 
-.split-heading > p {
+.split-heading p:not(.eyebrow) {
   margin: 0 0 4px;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.66);
 }
 
 .industry-grid {
@@ -648,10 +679,10 @@ svg {
   min-height: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   padding: 34px;
   border-radius: var(--radius);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   transition: transform 180ms ease;
 }
 
@@ -660,15 +691,15 @@ svg {
 }
 
 .industry-card-orange {
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .industry-card-cream {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .industry-card-blue {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
   color: var(--white);
 }
 
@@ -679,7 +710,7 @@ svg {
 
 .card-label {
   margin: 0 0 16px;
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -695,17 +726,8 @@ svg {
   line-height: var(--type-body-line);
 }
 
-.card-arrow {
-  width: 54px;
-  height: 54px;
-  display: grid;
-  place-items: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-}
-
 .feature {
-  background: var(--warm-white);
+  background: var(--brand_secondary_warm-white);
 }
 
 .feature-grid {
@@ -720,7 +742,7 @@ svg {
   min-height: 590px;
   overflow: hidden;
   border-radius: var(--radius);
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
 .feature-art::before,
@@ -735,7 +757,7 @@ svg {
   height: 390px;
   top: 100px;
   left: 75px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   box-shadow: 0 0 0 60px rgba(255, 206, 0, 0.26);
 }
 
@@ -744,7 +766,7 @@ svg {
   height: 190px;
   right: -50px;
   bottom: -30px;
-  background: var(--pink);
+  background: var(--brand_accent_pink);
 }
 
 .cloud-ring {
@@ -788,14 +810,26 @@ svg {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--yellow);
-  box-shadow: 0 0 20px var(--yellow);
+  background: var(--brand_accent_yellow);
+  box-shadow: 0 0 20px var(--brand_accent_yellow);
 }
 
-.cloud-core span:nth-child(1) { top: 0; left: 48%; }
-.cloud-core span:nth-child(2) { top: 42%; left: 5%; }
-.cloud-core span:nth-child(3) { top: 47%; right: 2%; }
-.cloud-core span:nth-child(4) { bottom: 0; left: 52%; }
+.cloud-core span:nth-child(1) {
+  top: 0;
+  left: 48%;
+}
+.cloud-core span:nth-child(2) {
+  top: 42%;
+  left: 5%;
+}
+.cloud-core span:nth-child(3) {
+  top: 47%;
+  right: 2%;
+}
+.cloud-core span:nth-child(4) {
+  bottom: 0;
+  left: 52%;
+}
 
 .feature-art > p {
   position: absolute;
@@ -810,7 +844,7 @@ svg {
   text-transform: uppercase;
 }
 
-.feature-copy > p {
+.feature-copy > p:not(.eyebrow) {
   margin: 28px 0;
 }
 
@@ -836,14 +870,14 @@ svg {
   height: 25px;
   padding: 4px;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
   fill: none;
-  stroke: var(--ink);
+  stroke: var(--brand_primary_black);
   stroke-width: 2.4;
 }
 
 .process {
-  background: var(--blue);
+  background: var(--brand_accent_blue);
   color: var(--white);
 }
 
@@ -896,7 +930,7 @@ svg {
 }
 
 .faq {
-  background: var(--cream);
+  background: var(--brand_secondary_cream);
 }
 
 .faq-grid {
@@ -911,7 +945,7 @@ svg {
   top: 40px;
 }
 
-.faq-intro > p {
+.faq-intro > p:not(.eyebrow) {
   margin: 24px 0 34px;
 }
 
@@ -941,7 +975,7 @@ svg {
   position: absolute;
   top: 25px;
   right: 10px;
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font: 400 30px/1 var(--body);
 }
 
@@ -957,7 +991,7 @@ svg {
 
 .testimonial {
   overflow: hidden;
-  background: var(--yellow);
+  background: var(--brand_secondary_orange-light);
 }
 
 .testimonial-inner {
@@ -971,7 +1005,7 @@ svg {
 .quote-mark {
   align-self: start;
   margin-top: 95px;
-  color: var(--orange);
+  color: var(--brand_primary_orange);
   font: 700 140px/1 var(--heading);
 }
 
@@ -1011,43 +1045,55 @@ svg {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--brand_primary_orange);
 }
 
-.testimonial-orbit span:nth-child(1) { top: 30px; left: 105px; }
-.testimonial-orbit span:nth-child(2) { top: 170px; left: -9px; background: var(--blue); }
-.testimonial-orbit span:nth-child(3) { top: 46px; right: 70px; background: var(--pink); }
+.testimonial-orbit span:nth-child(1) {
+  top: 33px;
+  left: 105px;
+}
+.testimonial-orbit span:nth-child(2) {
+  top: 170px;
+  left: -24px;
+  background: var(--brand_accent_blue);
+}
+.testimonial-orbit span:nth-child(3) {
+  top: 14px;
+  right: 65px;
+  background: var(--brand_accent_pink);
+}
 
 .contact {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled.svg");
+  background-position: top left -50px;
+  background-repeat: repeat-x;
+  background-size: auto 80%;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 .contact::after {
   content: "";
   position: absolute;
-  top: 30px;
-  right: 2vw;
-  width: 420px;
-  height: 330px;
-  background-image:
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg");
-  background-position:
-    8% 0, 70% 0,
-    26% 27%, 88% 27%,
-    52% 52%,
-    8% 78%, 70% 78%,
-    26% 100%, 88% 100%;
-  background-repeat: no-repeat;
-  background-size: 76px auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.07;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--brand_primary_black) 100px, transparent) left / 300px 100%
+      no-repeat,
+    linear-gradient(to left, var(--brand_primary_black) 100px, transparent) right / 300px 100%
+      no-repeat;
   pointer-events: none;
 }
 
@@ -1056,7 +1102,7 @@ svg {
   z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  align-items: end;
+  align-items: start;
   gap: 100px;
 }
 
@@ -1072,14 +1118,22 @@ svg {
 
 .site-footer {
   padding: 72px 0 28px;
-  background: var(--ink);
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
 .contact-page-main {
-  min-height: 100vh;
-  padding-top: 106px;
-  background: var(--ink);
+  flex: 1;
+  padding-top: 10px;
+  background: var(--brand_primary_black);
+  color: var(--white);
+}
+
+.about-main {
+  position: relative;
+  flex: 1;
+  padding-top: 90px;
+  background: var(--brand_primary_black);
   color: var(--white);
 }
 
@@ -1093,25 +1147,30 @@ svg {
   content: "";
   position: absolute;
   top: 20px;
-  right: -70px;
-  width: 520px;
-  height: 420px;
-  background-image:
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg"),
-    url("favicon.svg"), url("favicon.svg");
-  background-position:
-    8% 0, 70% 0,
-    26% 27%, 88% 27%,
-    52% 52%,
-    8% 78%, 70% 78%,
-    26% 100%, 88% 100%;
-  background-repeat: no-repeat;
-  background-size: 92px auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.05;
+  left: -10%;
+  width: 110%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled_atomic.svg");
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: 500px auto;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.contact-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, transparent, var(--brand_primary_black)) bottom / 100% 120px
+      no-repeat,
+    linear-gradient(
+      -45deg,
+      var(--brand_primary_black) 0 20%,
+      transparent 40% 60%,
+      var(--brand_primary_black) 80% 100%
+    );
   pointer-events: none;
 }
 
@@ -1147,7 +1206,7 @@ svg {
 .contact-direct {
   display: inline-flex;
   margin-top: 34px;
-  color: var(--light-orange);
+  color: var(--brand_secondary_orange-light);
   font-weight: 700;
   text-underline-offset: 6px;
 }
@@ -1157,8 +1216,8 @@ svg {
   gap: 25px;
   padding: 48px;
   border-radius: var(--radius);
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--brand_secondary_cream);
+  color: var(--brand_primary_black);
   box-shadow: var(--shadow);
 }
 
@@ -1206,7 +1265,7 @@ svg {
   border: 1px solid rgba(26, 11, 0, 0.25);
   border-radius: 12px;
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
   font: 400 16px/1.5 var(--body);
 }
 
@@ -1218,7 +1277,7 @@ svg {
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-color: var(--orange);
+  border-color: var(--brand_primary_orange);
   outline: 3px solid rgba(255, 111, 0, 0.2);
   outline-offset: 1px;
 }
@@ -1242,9 +1301,39 @@ svg {
 
 .form-status:not(:empty) {
   padding: 12px 14px;
-  border-left: 4px solid var(--orange);
+  border-left: 4px solid var(--brand_primary_orange);
   background: var(--white);
-  color: var(--ink);
+  color: var(--brand_primary_black);
+}
+
+.about-main::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -10%;
+  width: 110%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled_Fade_D-T.svg");
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 200px auto;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.about-main::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -10%;
+  width: 110%;
+  height: 100%;
+  background-image: url("images/IRL_Logomark_tiled_Fade_U-T.svg");
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-size: 200px auto;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 .footer-main {
@@ -1284,7 +1373,7 @@ svg {
 .footer-main nav a:focus-visible,
 .footer-bottom a:hover,
 .footer-bottom a:focus-visible {
-  color: var(--orange);
+  color: var(--brand_primary_orange);
 }
 
 .footer-bottom {
@@ -1307,7 +1396,7 @@ svg {
 }
 
 :focus-visible {
-  outline: 3px solid var(--yellow);
+  outline: 3px solid var(--brand_accent_yellow);
   outline-offset: 4px;
 }
 
@@ -1362,8 +1451,8 @@ svg {
   }
 
   .mobile-nav summary {
-    padding: 9px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 13px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 999px;
     cursor: pointer;
     font-size: 13px;
@@ -1384,7 +1473,7 @@ svg {
     overflow: hidden;
     border-radius: 16px;
     background: var(--white);
-    color: var(--ink);
+    color: var(--brand_primary_black);
     box-shadow: var(--shadow);
   }
 
@@ -1508,7 +1597,8 @@ svg {
     padding-top: 82px;
   }
 
-  .contact-page-main {
+  .contact-page-main,
+  .about-main {
     padding-top: 82px;
   }
 
@@ -1516,7 +1606,6 @@ svg {
     padding-block: 72px;
   }
 
-  .contact::after,
   .contact-page-hero::before {
     top: 18px;
     right: -24px;
@@ -1571,13 +1660,6 @@ svg {
 
   .scan-label {
     display: none;
-  }
-
-  .project-types span,
-  .project-types a {
-    min-height: 42px;
-    padding: 8px 13px;
-    font-size: 11px;
   }
 
   .section-heading {
