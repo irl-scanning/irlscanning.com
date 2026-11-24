@@ -79,7 +79,7 @@ by Vercel under the SIL Open Font License 1.1; its license is included at
 
 `public/contact.html` contains a static mailto form. Its small progressive
 enhancement script builds a structured draft addressed to
-`hello@irlscanning.com` and opens the visitor's configured email application;
+`contact@irlscanning.com` and opens the visitor's configured email application;
 the visitor must send the draft from that application. No form data is posted
 to the site or a third-party service.
 

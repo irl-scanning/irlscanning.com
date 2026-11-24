@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 640 620"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="scan-visual.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="2.5062327"
+     inkscape:cx="212.8693"
+     inkscape:cy="398.00773"
+     inkscape:window-width="3840"
+     inkscape:window-height="2071"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg25"
+     showgrid="false" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="scan-surface"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#ff6f00"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#a34700"
+         id="stop2" />
+    </linearGradient>
+    <filter
+       id="soft-glow"
+       x="-0.035555556"
+       y="-0.056470588"
+       width="1.0711111"
+       height="1.1129412">
+      <feGaussianBlur
+         stdDeviation="8"
+         id="feGaussianBlur2" />
+    </filter>
+  </defs>
+  <ellipse
+     cx="325"
+     cy="340"
+     rx="270"
+     ry="170"
+     fill="#ff6f00"
+     filter="url(#soft-glow)"
+     opacity="0.18"
+     id="ellipse2"
+     style="display:inline"
+     inkscape:label="glow" />
+  <g
+     id="g27"
+     inkscape:label="grid">
+    <path
+       d="M 50.027344,463.16016 315.71875,604.83203 M 95.19451,435.8442 359.76619,576.89888 M 140.36168,408.52825 403.81362,548.96572 M 185.52884,381.2123 447.86106,521.03256 M 230.69601,353.89634 491.9085,493.09941 M 275.86317,326.58038 535.95593,465.16625 M 321.03034,299.26443 580.00337,437.2331"
+       fill="none"
+       stroke="#fdbd8e"
+       stroke-opacity="0.16"
+       stroke-width="1"
+       id="path2"
+       sodipodi:nodetypes="cccccccccccccc"
+       style="display:inline"
+       inkscape:label="up-left" />
+    <path
+       d="m 49.5,463.25 272,-164 m -218.8,192.4 270.6,-164.8 m -217.4,193.2 269.2,-165.6 m -216,194 267.8,-166.4 m -214.6,194.8 266.4,-167.2 m -213.2,195.6 265,-168"
+       fill="none"
+       stroke="#fdbd8e"
+       stroke-opacity="0.16"
+       stroke-width="1"
+       id="path3"
+       style="display:inline"
+       inkscape:label="up-right"
+       sodipodi:nodetypes="cccccccccccc" />
+  </g>
+  <g
+     id="g9"
+     style="display:inline"
+     inkscape:label="venue">
+    <path
+       d="M 145,315 324,211 494,294 314,403 Z"
+       fill="url(#scan-surface)"
+       id="path4"
+       inkscape:label="top" />
+    <path
+       d="m 145,315 169,88 V 533 L 145,447 Z"
+       fill="#a34700"
+       fill-opacity="0.3"
+       id="path5"
+       inkscape:label="left" />
+    <path
+       d="M 314,403 494,294 V 422 L 314,533 Z"
+       fill="#1a0b00"
+       fill-opacity="0.68"
+       id="path6"
+       inkscape:label="right" />
+    <path
+       d="M 183.12856,318.30716 322,240 455.71786,302.43572 314,389 Z"
+       fill="none"
+       stroke="#ffffff"
+       stroke-opacity="0.68"
+       stroke-width="1.5"
+       id="path7"
+       style="display:inline"
+       inkscape:label="lines-top"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="m 183.12856,318.30716 v 130 m 272.5893,-18.87144 v -127 M 314,389 V 519 M 226.75237,341.87144 v 130 m 43.62382,-106.43572 v 130 m 90.8631,-135.29048 v 129 m 47.23928,-157.85476 v 128"
+       fill="none"
+       stroke="#ffffff"
+       stroke-opacity="0.68"
+       stroke-width="1.5"
+       id="path8"
+       style="display:inline"
+       inkscape:label="lines-vertical"
+       sodipodi:nodetypes="cccccccccccccc" />
+    <path
+       d="M 183.12856,383.30716 314,454 455.71786,365.93572 M 183.12856,448.30716 314,519 455.71786,429.43572"
+       fill="none"
+       stroke="#ffffff"
+       stroke-opacity="0.68"
+       stroke-width="1.5"
+       id="path9"
+       inkscape:label="lines-horizontal"
+       sodipodi:nodetypes="cccccc" />
+  </g>
+  <g
+     id="g12"
+     inkscape:label="scanner"
+     style="display:inline">
+    <path
+       id="path1"
+       style="fill:none;stroke:#ffbd8a;stroke-width:2"
+       d="m 299.89166,552.8048 -15.82579,33.706 m 66.02529,-33.706 15.82579,33.706 M 325,563.1106 V 612"
+       inkscape:label="stand" />
+    <path
+       d="m 288.06066,470 h 73.79029 L 351,550 c 0,0 -1.22964,13.02739 -26.24854,13.02739 C 299.73256,563.02739 299,550 299,550 Z"
+       fill="#1a0b00"
+       stroke="#ffbd8a"
+       stroke-width="2"
+       id="path10"
+       inkscape:label="body"
+       sodipodi:nodetypes="ccczcc" />
+    <ellipse
+       cx="325"
+       cy="470"
+       rx="38"
+       ry="22"
+       fill="#ff6f00"
+       id="ellipse10"
+       inkscape:label="top" />
+    <circle
+       cx="325"
+       cy="450"
+       r="25"
+       fill="#ffce00"
+       id="circle11"
+       inkscape:label="orb" />
+    <circle
+       cx="325"
+       cy="450"
+       r="11"
+       fill="#1a0b00"
+       id="circle12"
+       inkscape:label="orb-inner" />
+  </g>
+  <g
+     id="g14"
+     style="display:inline"
+     inkscape:label="rings">
+    <ellipse
+       cx="325"
+       cy="450"
+       rx="92"
+       ry="42"
+       fill="none"
+       stroke="#ff6f00"
+       stroke-width="1.5"
+       stroke-dasharray="5, 9"
+       id="ellipse12"
+       inkscape:label="ring-inner" />
+    <ellipse
+       cx="325"
+       cy="450"
+       rx="157"
+       ry="72"
+       fill="none"
+       stroke="#ff6f00"
+       stroke-width="1.5"
+       stroke-dasharray="5, 9"
+       opacity="0.6"
+       id="ellipse13"
+       inkscape:label="ring-middle" />
+    <ellipse
+       cx="325"
+       cy="450"
+       rx="226"
+       ry="105"
+       fill="none"
+       stroke="#ff6f00"
+       stroke-width="1.5"
+       stroke-dasharray="5, 9"
+       opacity="0.35"
+       id="ellipse14"
+       inkscape:label="ring-outer" />
+  </g>
+  <g
+     id="g25"
+     style="display:inline"
+     inkscape:label="constellation">
+    <circle
+       cx="111.68827"
+       cy="137.6115"
+       r="2.2019894"
+       fill="#ffce00"
+       id="circle2"
+       inkscape:label="circle14"
+       style="display:inline;stroke-width:0.733997" />
+    <circle
+       cx="213.4346"
+       cy="487.93811"
+       r="1.8029842"
+       fill="#ffce00"
+       id="circle1"
+       inkscape:label="circle13"
+       style="display:inline;stroke-width:0.600995" />
+    <circle
+       cx="111"
+       cy="374"
+       r="5"
+       fill="#ffce00"
+       id="circle23"
+       style="display:inline"
+       inkscape:label="circle12" />
+    <circle
+       cx="94"
+       cy="287"
+       r="3"
+       fill="#ffce00"
+       id="circle22"
+       style="display:inline"
+       inkscape:label="circle11" />
+    <circle
+       cx="119"
+       cy="212"
+       r="4"
+       fill="#ffce00"
+       id="circle14"
+       inkscape:label="circle10" />
+    <circle
+       cx="170"
+       cy="173"
+       r="3"
+       fill="#ffce00"
+       id="circle15"
+       inkscape:label="circle9" />
+    <circle
+       cx="236"
+       cy="128"
+       r="5"
+       fill="#ffce00"
+       id="circle16"
+       inkscape:label="circle8" />
+    <circle
+       cx="314"
+       cy="96"
+       r="3"
+       fill="#ffce00"
+       id="circle17"
+       inkscape:label="circle7" />
+    <circle
+       cx="390"
+       cy="132"
+       r="4"
+       fill="#ffce00"
+       id="circle18"
+       inkscape:label="circle6" />
+    <circle
+       cx="465"
+       cy="167"
+       r="3"
+       fill="#ffce00"
+       id="circle19"
+       inkscape:label="circle5" />
+    <circle
+       cx="529"
+       cy="224"
+       r="5"
+       fill="#ffce00"
+       id="circle20"
+       inkscape:label="circle4" />
+    <circle
+       cx="558"
+       cy="300"
+       r="3"
+       fill="#ffce00"
+       id="circle21"
+       inkscape:label="circle3" />
+    <circle
+       cx="518"
+       cy="383"
+       r="4"
+       fill="#ffce00"
+       id="circle24"
+       inkscape:label="circle2" />
+    <circle
+       cx="482"
+       cy="499"
+       r="3"
+       fill="#ffce00"
+       id="circle25"
+       inkscape:label="circle1" />
+  </g>
+</svg>
